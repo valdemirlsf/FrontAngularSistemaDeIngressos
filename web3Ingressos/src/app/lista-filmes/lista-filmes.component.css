@@ -6,9 +6,15 @@
     flex-direction: column;
     align-items: center;
 }
-.enviar{
-    width: 20%;
-    padding: 3px;
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+}
+.movies{
+    width:100%;
+}
+.botaoadd{
     background-color: #bf0408;
-    color: white;
 }

@@ -6,9 +6,12 @@
     flex-direction: column;
     align-items: center;
 }
-.enviar{
-    width: 20%;
-    padding: 3px;
+mat-card{
+    width: 90%;
+    border-radius: 10px;
+    border-bottom: 4px solid #eb6363;
+    border-top: 4px solid #eb6363;
+}
+.botaoadd{
     background-color: #bf0408;
-    color: white;
 }

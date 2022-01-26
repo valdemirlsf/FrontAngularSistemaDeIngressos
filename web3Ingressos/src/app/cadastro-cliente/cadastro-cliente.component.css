@@ -22,3 +22,18 @@
 mat-form-field{
     margin: 2px;
 }
+mat-stepper{
+    color: #bf0408;
+}
+.enviar{
+    width: 20%;
+    padding: 3px;
+    background-color: #bf0408;
+    color: white;
+}
+.actions button{
+    margin: 3px;
+}
+.actions{
+    margin:10px;
+}

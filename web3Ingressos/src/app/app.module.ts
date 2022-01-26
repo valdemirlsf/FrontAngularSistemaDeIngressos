@@ -8,6 +8,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTabsModule } from '@angular/material/tabs'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompraIngressoComponent } from './compra-ingresso/compra-ingresso.component';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { CadastroFilmesComponent } from './cadastro-filmes/cadastro-filmes.component';
@@ -15,6 +21,8 @@ import { CadastroSessaoComponent } from './cadastro-sessao/cadastro-sessao.compo
 import { CadastroSalaComponent } from './cadastro-sala/cadastro-sala.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListaSessoesComponent } from './lista-sessoes/lista-sessoes.component';
+import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
+import { ListaSalaComponent } from './lista-sala/lista-sala.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +32,9 @@ import { ListaSessoesComponent } from './lista-sessoes/lista-sessoes.component';
     CadastroFilmesComponent,
     CadastroSessaoComponent,
     CadastroSalaComponent,
-    ListaSessoesComponent
+    ListaSessoesComponent,
+    ListaFilmesComponent,
+    ListaSalaComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +45,14 @@ import { ListaSessoesComponent } from './lista-sessoes/lista-sessoes.component';
     MatDatepickerModule,
     MatIconModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatDividerModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTabsModule
 
   ],
   providers: [],

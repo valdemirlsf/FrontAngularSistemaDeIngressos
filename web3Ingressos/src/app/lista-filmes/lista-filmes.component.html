@@ -1,0 +1,27 @@
+<div class="content">
+        <div class="example-button-container">
+            <a routerLink='cadastro'>
+                <button mat-fab class="botaoadd">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </a>
+            
+        </div>
+    <p>Adicionar Filme</p>
+    <mat-divider></mat-divider>
+    <h2>Filmes</h2>
+    <div class="movies">
+        <mat-card>
+            <mat-card-title>Título do Filme</mat-card-title>
+            <mat-card-subtitle>Ano</mat-card-subtitle>
+            <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <mat-card-content>
+                <p>Sinopse do Filme</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button mat-stroked-button color="primary">Editar</button>
+              <button mat-stroked-button color="warn">Excluir</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

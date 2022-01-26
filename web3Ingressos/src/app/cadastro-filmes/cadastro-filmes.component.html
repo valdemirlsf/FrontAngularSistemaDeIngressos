@@ -1,1 +1,46 @@
-<p>cadastro-filmes works!</p>
+<div class="content">
+    <!-- 
+        Cadastrar um filme
+        id_filme!: String;
+        nome!: String;
+        data_estreia!: Date;
+        duracao!: Number;
+        direcao!: String;
+        origem!: String;
+        dublagem!: String;
+        genero!: String;
+    -->
+    <h1>Digite os dados do filme</h1>
+    <div class="group">
+        <mat-form-field appearance="fill">
+            <mat-label>Nome do Filme</mat-label>
+            <input matInput required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Data de lançamento</mat-label>
+            <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+        </mat-form-field>
+        <mat-datepicker #picker></mat-datepicker>
+    </div>
+    <div class="group">
+        <mat-form-field appearance="fill">
+            <mat-label>Duração em minutos</mat-label>
+            <input matInput type="number" min="0">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Direção</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+    <div class="group">
+        <mat-form-field appearance="fill">
+            <mat-label>Origem</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Nome do Filme</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button class="enviar">Cadastrar &nbsp;&nbsp;&nbsp; <mat-icon>send</mat-icon></button>
+</div>
