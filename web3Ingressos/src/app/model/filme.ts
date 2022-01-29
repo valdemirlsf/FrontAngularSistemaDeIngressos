@@ -12,11 +12,12 @@ export class Filme{
 
     id_filme!: String;
     nome!: String;
-    data_estreia!: Date;
+    data_lancamento!: Date;
     duracao!: Number;
     direcao!: String;
     origem!: String;
     dublagem!: String;
-    genero!: String;
+    tipo!: String;
+    url_foto!:String;
 
 }

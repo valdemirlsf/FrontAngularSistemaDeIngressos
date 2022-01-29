@@ -1,25 +1,21 @@
 <div class="content">
     <h2>Faça seu cadastro</h2>
-    <mat-stepper color="warn" orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-stepper color="warn" orientation="vertical" [linear]="!isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel class="title">Digite seus dados pessoais</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Cinefilo da Silva" formControlName="firstCtrl" required>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Data de Nascimento</mat-label>
-            <input matInput [matDatepicker]="picker" (focus)="picker.open()" formControlName="firstCtrl" readonly required>
+            <input matInput type="text" placeholder="Cinefilo da Silva" formControlName="firstCtrl" required [(ngModel)]="usuario.nome">
           </mat-form-field>
         <mat-datepicker #picker></mat-datepicker>
         <mat-form-field appearance="fill">
           <mat-label>Telefone</mat-label>
-          <input matInput type="tel" formControlName="firstCtrl" required>
+          <input matInput type="tel" formControlName="firstCtrl1" required [(ngModel)]="usuario.telefone">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="firstCtrl" required>
+          <input matInput type="email" formControlName="firstCtrl2" required [(ngModel)]="usuario.email">
         </mat-form-field>
           <div>
             <button mat-button matStepperNext>Próximo</button>
@@ -31,24 +27,23 @@
           <ng-template matStepLabel>Dados de endereço</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>Rua</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Rua da pipoca, 23"
-                  required>
+            <input matInput formControlName="secondCtrl" placeholder="Rua da pipoca, 23" required [(ngModel)]='endereco.rua'>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Cep</mat-label>
-            <input matInput type="estado" placeholder="Apenas números" formControlName="secondCtrl" required>
+            <input matInput type="text" placeholder="Apenas números" formControlName="secondCtrl1" required [(ngModel)]='endereco.cep'>
         </mat-form-field>
         <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Estado</mat-label>
-            <input matInput type="estado" formControlName="secondCtrl" required>
+            <input matInput type="text" formControlName="secondCtrl2" required [(ngModel)]='endereco.estado'>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Bairro</mat-label>
-            <input matInput type="estado" formControlName="secondCtrl" required>
+            <input matInput type="text" formControlName="secondCtrl3" required [(ngModel)]='endereco.logradouro'>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Ponto de Referência</mat-label>
-          <input matInput type="estado" formControlName="secondCtrl" required>
+          <input matInput type="text" formControlName="secondCtrl4" required [(ngModel)]='endereco.ponto_referencia'>
         </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Anterior</button>
@@ -59,7 +54,7 @@
       <mat-step>
         <ng-template matStepLabel>Terminamos, confira se seus dados estão todos corretinhos!</ng-template>
         <div class="actions">
-          <button mat-raised-button class="enviar">Cadastrar &nbsp;&nbsp;&nbsp; <mat-icon class="icone">send</mat-icon></button>
+          <button mat-raised-button class="enviar" (click)="salvar()">Cadastrar &nbsp;&nbsp;&nbsp; <mat-icon class="icone">send</mat-icon></button>
           <button mat-button matStepperPrevious>Voltar</button>
         </div>
       </mat-step>

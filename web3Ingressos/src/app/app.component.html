@@ -12,15 +12,22 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
+  <a routerLink=''>
+    <img
     width="40"
-    alt="Angular Logo"
-    src="https://cdn-icons-png.flaticon.com/512/6603/6603488.png"
-  />
-  <h3>{{ title }}</h3>
+    alt="Logo"
+    src="https://cdn-icons-png.flaticon.com/512/6603/6603488.png"/>
+  </a>
+  <a routerLink=''><h3>{{ title }}</h3></a>
+  
     <span>
-      <a href="">
-        <h4>Compre aqui seus ingressos</h4>
+      <a routerLink='usuario/cadastro'>
+        <h4>Faça seu cadastro</h4>
+      </a>
+    </span>
+    <span>
+      <a routerLink='ingresso/'>
+        <h4>Seus ingressos</h4>
       </a>
     </span>
     <div class="spacer"></div>
@@ -30,7 +37,7 @@
       <a routerLink='filme'>
         <button mat-menu-item>Filmes</button>
       </a>
-      <a routerLink=''>
+      <a routerLink='sessao'>
         <button mat-menu-item>Sessões</button>
       </a>
       <a routerLink='sala'>

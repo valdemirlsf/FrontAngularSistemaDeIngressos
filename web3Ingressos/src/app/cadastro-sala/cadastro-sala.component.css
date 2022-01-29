@@ -12,3 +12,9 @@
     background-color: #bf0408;
     color: white;
 }
+.group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

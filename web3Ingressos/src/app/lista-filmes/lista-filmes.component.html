@@ -1,26 +1,41 @@
 <div class="content">
-        <div class="example-button-container">
-            <a routerLink='cadastro'>
-                <button mat-fab class="botaoadd">
-                    <mat-icon>add</mat-icon>
-                </button>
-            </a>
-            
-        </div>
+    <div class="example-button-container">
+        <a routerLink='cadastro'>
+            <button mat-fab class="botaoadd">
+                <mat-icon>add</mat-icon>
+            </button>
+        </a>
+    </div>
     <p>Adicionar Filme</p>
-    <mat-divider></mat-divider>
+    <ng-template [ngIf]='!filmes || filmes.length==0'>
+        <ng-template [ngIf]='buscando'>
+            <mat-spinner ></mat-spinner>
+        </ng-template>
+        <h2>Tivemos um erro ao carregar os filmes</h2>
+        <button mat-raised-button color="warn" (click)='findAllMovies()'>Tentar novamente</button>
+    </ng-template>
     <h2>Filmes</h2>
     <div class="movies">
-        <mat-card>
-            <mat-card-title>Título do Filme</mat-card-title>
-            <mat-card-subtitle>Ano</mat-card-subtitle>
-            <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        <mat-card *ngFor="let filme of filmes">
+            <mat-card-title>{{ filme.nome }}</mat-card-title>
+            <mat-card-subtitle>{{ filme.data_lancamento }}</mat-card-subtitle>
+            <img mat-card-xl-image [src]="filme.url_foto">
             <mat-card-content>
-                <p>Sinopse do Filme</p>
+                <mat-list>
+                    <mat-list-item>Sinopse do Filme</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item><b>Duração: &nbsp;</b>{{ filme.duracao }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item><b>Diretor: &nbsp;</b>{{ filme.direcao }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item><b>Diretor: &nbsp;</b>{{ filme.direcao }}</mat-list-item>
+                  </mat-list>
             </mat-card-content>
             <mat-card-actions align="end">
-              <button mat-stroked-button color="primary">Editar</button>
-              <button mat-stroked-button color="warn">Excluir</button>
+                <a [routerLink]="['cadastro/', filme.id_filme]">
+                    <button mat-button color="primary">Editar</button>
+                </a>
+              <button mat-stroked-button color="warn" (click)="deletar(filme.id_filme)">Excluir</button>
             </mat-card-actions>
           </mat-card>
     </div>

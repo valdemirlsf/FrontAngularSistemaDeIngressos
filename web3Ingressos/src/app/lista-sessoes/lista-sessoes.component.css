@@ -28,6 +28,11 @@
     width: 50%;
 }
 .detalhes{
-    background-color: tomato;
     width: 50%;
+}
+.detalhes b{
+    color:#bf0408;
+}
+button img{
+    width: 22px;
 }

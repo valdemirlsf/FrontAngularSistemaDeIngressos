@@ -13,18 +13,18 @@ export class SalaService{
         
     }
     create (sala :Sala){
-        return this.http.post<Sala[]>(this.url_api+'/cadastro/sala/salvar', sala);
+        return this.http.post<Sala[]>(this.url_api+'/sala/', sala);
     }
     findAll(){
-        return this.http.get<Sala[]>(this.url_api+'/cadastro/sala/listar');
+        return this.http.get<Sala[]>(this.url_api+'/sala/listar');
     }
     findOne(id: Number){
-        return this.http.get<Sala>(this.url_api+'/cadastro/sala/'+id);
+        return this.http.get<Sala>(this.url_api+'/sala/'+id);
     }
     delete(id: Number){
-        return this.http.delete<Sala>(this.url_api+'/cadastro/sala/remover'+id);
+        return this.http.delete<Sala>(this.url_api+'/sala/remover/'+id);
     }
     update (sala: Sala){
-        return this.http.put<Sala[]>(this.url_api+'/cadastro/sala/editar'+sala.id_sala, sala);
+        return this.http.put<Sala[]>(this.url_api+'/sala/editar/'+sala.id_sala, sala);
     }
 }

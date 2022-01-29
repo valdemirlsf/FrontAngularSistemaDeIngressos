@@ -12,6 +12,9 @@ mat-card{
     border-bottom: 4px solid #eb6363;
     border-top: 4px solid #eb6363;
 }
+mat-spinner{
+    padding:20px;
+}
 .botaoadd{
     background-color: #bf0408;
 }

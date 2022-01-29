@@ -22,9 +22,7 @@
 mat-form-field{
     margin: 2px;
 }
-mat-stepper{
-    color: #bf0408;
-}
+
 .enviar{
     width: 20%;
     padding: 3px;

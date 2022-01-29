@@ -14,33 +14,41 @@
     <div class="group">
         <mat-form-field appearance="fill">
             <mat-label>Nome do Filme</mat-label>
-            <input matInput required>
+            <input matInput required [(ngModel)]='filme.nome'>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Data de lançamento</mat-label>
-            <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+            <input matInput [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]='filme.data_lancamento' readonly>
         </mat-form-field>
         <mat-datepicker #picker></mat-datepicker>
     </div>
     <div class="group">
         <mat-form-field appearance="fill">
             <mat-label>Duração em minutos</mat-label>
-            <input matInput type="number" min="0">
+            <input matInput type="number" min="0" [(ngModel)]='filme.duracao'>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Direção</mat-label>
-            <input matInput>
+            <input type="text" matInput [(ngModel)]='filme.direcao'>
         </mat-form-field>
     </div>
     <div class="group">
         <mat-form-field appearance="fill">
             <mat-label>Origem</mat-label>
-            <input matInput>
+            <input matInput type="text" [(ngModel)]='filme.origem'>
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>Nome do Filme</mat-label>
-            <input matInput>
+            <mat-label>Dublagem</mat-label>
+            <input matInput type="text" [(ngModel)]='filme.dublagem'>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Genero</mat-label>
+            <input matInput type="text" [(ngModel)]='filme.tipo'>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Url da foto</mat-label>
+            <input matInput type="text" [(ngModel)]='filme.url_foto'>
         </mat-form-field>
     </div>
-    <button mat-raised-button class="enviar">Cadastrar &nbsp;&nbsp;&nbsp; <mat-icon>send</mat-icon></button>
+    <button mat-raised-button class="enviar" (click)='salvar()'>Cadastrar &nbsp;&nbsp;&nbsp; <mat-icon>send</mat-icon></button>
 </div>

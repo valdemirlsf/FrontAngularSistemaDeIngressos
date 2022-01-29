@@ -13,6 +13,7 @@ mat-form-field{
     width: 20%;
     padding: 3px;
     background-color: #bf0408;
+    color: white;
 }
 .group{
     display: flex;

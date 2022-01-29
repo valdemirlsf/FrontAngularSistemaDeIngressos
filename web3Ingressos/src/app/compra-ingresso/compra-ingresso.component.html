@@ -1,6 +1,70 @@
 <div class="content">
     <h1>Compra de Ingresso</h1>
-    <div>
-        
-    </div>
+      <mat-stepper [linear]="isLinear" #stepper *ngIf="sessao">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Revise as informações do filme</ng-template>
+            <div class="detalhes">
+              <h2>  {{ sessao.filme['nome'] }}</h2>
+              <h3> <b>Data: </b> {{ sessao.inicio | date: 'dd/MM/yyyy' }} </h3>
+              <h3> <b>Horário: </b> {{ sessao.inicio | date: 'HH:mm' }} </h3>
+              <h3> <b>Sala: </b> {{ sessao.sala.nome }}</h3>
+              <h4> <b>Valor: </b> R$ {{ sessao.valor_sessao }}</h4>
+              <div class="actions">
+                <button mat-button color='warn' (click)='dimQuantidade()'> <mat-icon>remove</mat-icon> </button>
+                <mat-form-field appearance="fill" required class="quantidade">
+                  <mat-label>Quantidade</mat-label>
+                  <input matInput type="number" readonly [(ngModel)]='quantidade' min="0" formControlName="firstCtrl">
+                </mat-form-field>
+                <button mat-button color='warn' (click)='addQuantidade()'> <mat-icon>add</mat-icon> </button>
+              </div>
+              <h2><b>Total: </b>R$ {{ total*quantidade }} reais</h2>
+            </div>
+            <div>
+              <button mat-raised-button color='warn' matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="informações de pagamento">
+          <form [formGroup]="secondFormGroup">
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="secondCtrl" [(ngModel)]='emailUser' required>
+              </mat-form-field>
+            </div>
+            
+            <mat-form-field appearance="fill">
+              <mat-label>Número do cartão (Apenas números)</mat-label>
+              <input matInput maxlength="16" Mask="1111 1111 1111 1111" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Nome do titular</mat-label>
+              <input matInput formControlName="secondCtrl" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Data de validade</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="MM/AA" maxlength="7" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>CCV</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="000" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-raised-button color='warn' matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Revise suas informações e confirme</ng-template>
+          <h2><b>Total: </b>R$ {{ total*quantidade }} reais</h2>
+          <h2>Forma de Pagamento: </h2>
+          
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="warn" (click)='salvar()'>Comprar</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
 </div>

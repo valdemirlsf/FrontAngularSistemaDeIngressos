@@ -13,18 +13,18 @@ export class SessaoService{
         
     }
     create (sessao :Sessao){
-        return this.http.post<Sessao[]>(this.url_api+'/cadastro/sessao/salvar', sessao);
+        return this.http.post<Sessao[]>(this.url_api+'/sessao/salvar/', sessao);
     }
     findAll(){
-        return this.http.get<Sessao[]>(this.url_api+'/cadastro/sessao/listar');
+        return this.http.get<Sessao[]>(this.url_api+'/sessao/listar');
     }
     findOne(id: Number){
-        return this.http.get<Sessao>(this.url_api+'/cadastro/sessao/'+id);
+        return this.http.get<Sessao>(this.url_api+'/sessao/'+id);
     }
     delete(id: Number){
-        return this.http.delete<Sessao>(this.url_api+'/cadastro/sessao/remover'+id);
+        return this.http.delete<Sessao>(this.url_api+'/sessao/remover'+id);
     }
     update (sessao: Sessao){
-        return this.http.put<Sessao[]>(this.url_api+'/cadastro/sessao/editar'+sessao.id_sessao, sessao);
+        return this.http.put<Sessao[]>(this.url_api+'/sessao/editar/'+sessao.id_sessao, sessao);
     }
 }

@@ -1,4 +1,5 @@
 import { Sessao } from "./sessao";
+import { Usuario } from "./usuario";
 
 export class Ingresso{
     /*
@@ -8,7 +9,8 @@ export class Ingresso{
 	    private Sessao sessao;
     */
     id_ingresso!: Number;
-    dataCompra!: Date;
+    data_compra!: Date;
     valor!: Number;
     sessao!: Sessao;
+    usuario!:Usuario;
 }

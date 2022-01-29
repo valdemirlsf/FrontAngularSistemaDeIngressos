@@ -1,19 +1,30 @@
 <div class="content">
     <div class="example-button-container">
         <a routerLink='cadastro'>
-            <button mat-fab class="botaoadd" aria-label="Example icon button with a delete icon">
+            <button mat-fab class="botaoadd">
                 <mat-icon>add</mat-icon>
             </button>
         </a>
-        
     </div>
     <p>Adicionar Sala</p>
-    <mat-card>
-        <mat-card-title>Sala id</mat-card-title>
-        <mat-card-subtitle>Quantidade de lugares</mat-card-subtitle>
+    <ng-template [ngIf]='!salas'>
+        <ng-template [ngIf]='buscando'>
+            <mat-spinner ></mat-spinner>
+        </ng-template>
+        <h2>Tivemos um erro ao buscar salas</h2>
+        <button mat-raised-button color="warn" (click)='findAllRooms()'>Tentar novamente</button>
+    </ng-template>
+    
+    <mat-card  *ngFor="let sala of salas">
+        <mat-card-title>{{sala.id_sala}} - {{sala.nome}}</mat-card-title>
+        <mat-card-subtitle>{{sala.qt_lugares}} lugares</mat-card-subtitle>
         <mat-card-actions align='end'>
-          <button mat-button color="primary">Editar</button>
-          <button mat-button color="warn">Excluir</button>
+            <a [routerLink]="['cadastro/', sala.id_sala]">
+                <button mat-button color="primary">Editar</button>
+            </a>
+            <button mat-button color="warn" (click)="deletar(sala.id_sala)">Excluir</button>
         </mat-card-actions>
     </mat-card>
+    
+    
 </div>

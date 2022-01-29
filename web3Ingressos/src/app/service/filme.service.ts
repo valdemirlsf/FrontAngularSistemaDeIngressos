@@ -13,18 +13,18 @@ export class FilmeService{
         
     }
     create (filme :Filme){
-        return this.http.post<Filme[]>(this.url_api+'/cadastro/filme/salvar', filme);
+        return this.http.post<Filme[]>(this.url_api+'/filme/', filme);
     }
     findAll(){
-        return this.http.get<Filme[]>(this.url_api+'/cadastro/filme/listar');
+        return this.http.get<Filme[]>(this.url_api+'/filme/listar/');
     }
     findOne(id: Number){
-        return this.http.get<Filme>(this.url_api+'/cadastro/filme/'+id);
+        return this.http.get<Filme>(this.url_api+'/filme/'+id);
     }
     delete(id: Number){
-        return this.http.delete<Filme>(this.url_api+'/cadastro/filme/remover'+id);
+        return this.http.delete<Filme>(this.url_api+'/filme/remover/'+id);
     }
     update (filme: Filme){
-        return this.http.put<Filme[]>(this.url_api+'/cadastro/filme/editar'+filme.id_filme, filme);
+        return this.http.put<Filme[]>(this.url_api+'/filme/editar/'+filme.id_filme, filme);
     }
 }

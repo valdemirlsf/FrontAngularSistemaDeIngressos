@@ -14,7 +14,7 @@ export class Sessao{
     inicio!:Date;
     fim!:Date;
     filme!: Filme;
-    Sala!: Sala;
+    sala!: Sala;
     valor_sessao!: Number;
 
 }

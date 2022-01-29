@@ -2,9 +2,13 @@
     <h1>Digite a quantidade de lugares da nova sala</h1>
     <div class="group">
         <mat-form-field appearance="fill">
+            <mat-label>Nome da sala</mat-label>
+            <input matInput required type="text" [(ngModel)]='sala.nome'>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
             <mat-label>Quantidade de lugares</mat-label>
-            <input matInput required type="number">
+            <input matInput type="number" min="0" required [(ngModel)]='sala.qt_lugares'>
         </mat-form-field>
     </div>
-    <button mat-raised-button class="enviar">Cadastrar Sala &nbsp;&nbsp;&nbsp; <mat-icon>send</mat-icon></button>
+    <button mat-raised-button class="enviar" (click)="salvar()" >Cadastrar Sala &nbsp;&nbsp;&nbsp; <mat-icon>send</mat-icon></button>
 </div>

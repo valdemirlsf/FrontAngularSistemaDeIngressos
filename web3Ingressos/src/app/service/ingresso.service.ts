@@ -13,18 +13,18 @@ export class IngressoService{
         
     }
     create (ingresso :Ingresso){
-        return this.http.post<Ingresso[]>(this.url_api+'/cadastro/ingresso/salvar', ingresso);
+        return this.http.post<Ingresso[]>(this.url_api+'/ingresso/salvar/', ingresso);
     }
     findAll(){
-        return this.http.get<Ingresso[]>(this.url_api+'/cadastro/ingresso/listar');
+        return this.http.get<Ingresso[]>(this.url_api+'/ingresso/listar');
     }
     findOne(id: Number){
-        return this.http.get<Ingresso>(this.url_api+'/cadastro/ingresso/'+id);
+        return this.http.get<Ingresso>(this.url_api+'/ingresso/'+id);
     }
     delete(id: Number){
-        return this.http.delete<Ingresso>(this.url_api+'/cadastro/ingresso/remover'+id);
+        return this.http.delete<Ingresso>(this.url_api+'/ingresso/remover/'+id);
     }
     update (ingresso: Ingresso){
-        return this.http.put<Ingresso[]>(this.url_api+'/cadastro/ingresso/editar'+ingresso.id_ingresso, ingresso);
+        return this.http.put<Ingresso[]>(this.url_api+'/ingresso/editar/'+ingresso.id_ingresso, ingresso);
     }
 }

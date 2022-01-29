@@ -2,7 +2,24 @@
     display: flex;
     margin: 82px auto 32px;
     padding: 0 16px;
+    width: 100%;
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+}
+mat-stepper{
+    width: 100%;
+}
+.quantidade{
+    width: 80px;
+}
+.actions {
+    display: flex;
+    align-items: center;
+}
+.actions button{
+    height: 60px;
+}
+.detalhes b{
+    color:#bf0408;
 }

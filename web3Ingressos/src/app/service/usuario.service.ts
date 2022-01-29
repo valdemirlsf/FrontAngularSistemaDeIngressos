@@ -13,18 +13,18 @@ export class UsuarioService{
         
     }
     create (usuario :Usuario){
-        return this.http.post<Usuario[]>(this.url_api+'/cadastro/usuario/salvar', usuario);
+        return this.http.post<Usuario[]>(this.url_api+'/usuario/salvar/', usuario);
     }
     findAll(){
-        return this.http.get<Usuario[]>(this.url_api+'/cadastro/usuario/listar');
+        return this.http.get<Usuario[]>(this.url_api+'/usuario/listar/');
     }
     findOne(id: Number){
-        return this.http.get<Usuario>(this.url_api+'/cadastro/usuario/'+id);
+        return this.http.get<Usuario>(this.url_api+'/usuario/'+id);
     }
     delete(id: Number){
-        return this.http.delete<Usuario>(this.url_api+'/cadastro/usuario/remover'+id);
+        return this.http.delete<Usuario>(this.url_api+'/usuario/remover/'+id);
     }
     update (usuario: Usuario){
-        return this.http.put<Usuario[]>(this.url_api+'/cadastro/usuario/editar'+usuario.id, usuario);
+        return this.http.put<Usuario[]>(this.url_api+'/usuario/editar/'+usuario.id_usuario, usuario);
     }
 }
